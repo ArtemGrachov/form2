@@ -95,6 +95,30 @@ body {
     content: '';
     clear: both;
 }
+.news-nav:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+.news-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.news-nav-item {
+    display: inline-block;
+    padding: 20px 50px;
+}
+
+.news-nav-item_prev {
+    float: left;
+}
+
+.news-nav-item_next {
+    float: right;
+}
 
 .articles-list {
     list-style: none;

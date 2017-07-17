@@ -6,6 +6,7 @@ angular.module('app')
     templateUrl: 'app/app.template.html',
     $routeConfig: [
         { path: '/', component: 'news', name: 'News', useAsDefault: true },
+        { path: '/news/:page', component: 'news', name: 'News' },
         { path: '/reg', component: 'reg', name: 'Reg' },
         { path: '/login', component: 'login', name: 'Login' },
         { path: '/dash', component: 'dash', name: 'Dash' },
