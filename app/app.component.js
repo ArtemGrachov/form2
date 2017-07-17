@@ -11,5 +11,10 @@ angular.module('app')
         { path: '/login', component: 'login', name: 'Login' },
         { path: '/dash', component: 'dash', name: 'Dash' },
         { path: '/news/post/:id', component: 'post', name: 'Post' }
-    ]
+    ],
+    controller: function(auth) {
+        this.logout = auth.logout;
+        this.login = auth.login;
+        this.checkAuth = auth.checkAuth;
+    }
 })

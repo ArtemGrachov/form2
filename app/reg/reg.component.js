@@ -1,26 +1,32 @@
 angular.module('reg')
     .component('reg', {
         templateUrl: 'app/reg/reg.template.html',
-        controller: function(phoneCodes) {
-            this.phoneCountry = 'ua';
+        controller: function(phoneCodes, auth) {
+            let ctrl = this;
 
-            this.selectPhoneCode = function() {
-                this.phoneCode = this.phoneNumber = phoneCodes.getCode(this.phoneCountry);
+            ctrl.phoneCountry = 'ua';
+
+            ctrl.submitForm = function() {
+                auth.login();
+            };
+
+            ctrl.selectPhoneCode = function() {
+                ctrl.phoneCode = ctrl.phoneNumber = phoneCodes.getCode(ctrl.phoneCountry);
             }
-            this.selectPhoneCode();
+            ctrl.selectPhoneCode();
 
-            this.phoneInput = function(e) {
-                if (this.phoneNumber.length <= 4 && !(/\d/).test(e.key)) {
-                    this.phoneNumber = this.phoneCode;
+            ctrl.phoneInput = function(e) {
+                if (ctrl.phoneNumber.length <= 4 && !(/\d/).test(e.key)) {
+                    ctrl.phoneNumber = ctrl.phoneCode;
                 };
             }
-            this.phoneChange = function(oldVal) {
-                if (this.phoneNumber == undefined || this.phoneNumber.length < 4) {
-                    this.phoneNumber = this.phoneCode;
+            ctrl.phoneChange = function(oldVal) {
+                if (ctrl.phoneNumber == undefined || ctrl.phoneNumber.length < 4) {
+                    ctrl.phoneNumber = ctrl.phoneCode;
                 } else {
-                    if (this.phoneNumber.indexOf(this.phoneCode) != 0 ||
-                        !(/^\+[0-9]+$/).test(this.phoneNumber)) {
-                        this.phoneNumber = oldVal;
+                    if (ctrl.phoneNumber.indexOf(ctrl.phoneCode) != 0 ||
+                        !(/^\+[0-9]+$/).test(ctrl.phoneNumber)) {
+                        ctrl.phoneNumber = oldVal;
                     }
                 }
             }

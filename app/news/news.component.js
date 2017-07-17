@@ -3,7 +3,6 @@ angular.module('news')
         templateUrl: 'app/news/news.template.html',
         controller: function(getPosts) {
             let ctrl = this;
-
             getPosts.getAll()
                 .then(function(response) {
                     ctrl.allPosts = response.data;
@@ -22,7 +21,6 @@ angular.module('news')
                     }
                     ctrl.posts = ctrl.allPosts.slice(postsNumber[0], postsNumber[1]);
                 })
-
             ctrl.$routerOnActivate = function(prev) {
                 ctrl.pageNumber = prev.params.page;
             }

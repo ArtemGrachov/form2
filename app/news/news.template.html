@@ -19,3 +19,14 @@
         </div>
     </li>
 </ul>
+<nav class="news-nav">
+    <ul class="news-nav-list">
+        <li class="news-nav-item news-nav-item_prev" ng-show="$ctrl.prevPage">
+            <a href="/#!news/{{$ctrl.prevPage}}">
+                < Previous page</a>
+        </li>
+        <li class="news-nav-item news-nav-item_next" ng-show="$ctrl.nextPage">
+            <a href="/#!news/{{$ctrl.nextPage}}">Next page ></a>
+        </li>
+    </ul>
+</nav>

@@ -7,16 +7,16 @@
                     <li class="nav-item">
                         <a href="#!" class="nav__link">News</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" ng-show="!$ctrl.checkAuth()">
                         <a href="#!login" class="nav__link">Sign in</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" ng-show="!$ctrl.checkAuth()">
                         <a href="#!reg" class="nav__link">Registration</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#!logout" class="nav__link">Sign out</a>
+                    <li class="nav-item" ng-show="$ctrl.checkAuth()">
+                        <a href="#!logout" class="nav__link" ng-click="$ctrl.logout()">Sign out</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" ng-show="$ctrl.checkAuth()">
                         <a href="#!dash" class="nav__link">Dashboard</a>
                     </li>
                 </ul>
