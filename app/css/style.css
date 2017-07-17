@@ -82,6 +82,7 @@ body {
 
 .nav__link:hover {
    background:#0E121A;
+    text-decoration: none;
    color: red;
 }
 
@@ -105,11 +106,19 @@ body {
     margin: 20px 0;
 }
 
-.articles__title {
-    font-size: 36px;
+.articles-title {
+    font-size: 24px;
     font-weight: bold;
     color: #19202D;
     border-bottom: 2px solid red;
+}
+.articles-title__link {
+    text-decoration: none;
+    color: #19202D;    
+}
+.articles-title__link:hover {
+    text-decoration: none;
+    color: red;
 }
 
 .articles__content {
@@ -122,6 +131,14 @@ form {
     padding: 25px 15px;
     width: 450px;
     margin: auto;
+}
+
+.form-error {
+    color: red;
+}
+
+.form-success {
+    color: green;
 }
 
 label {
@@ -143,17 +160,6 @@ select {
 }
 
 
-input[type="submit"] {
-    background: #19202D;
-    border: none;
-    color: white;
-    border: 1px solid #19202D;
-}
-input[type="submit"]:hover {
-    background: white;
-    color: #19202D;
-}
-
 .dash-sidebar {
     float: left;
     width: 20%;
@@ -174,4 +180,9 @@ input[type="submit"]:hover {
     display: block;
     padding: 20px;
     transition: 300ms;
+}
+
+.ng-invalid .ng-dirty.ng-invalid {
+    color: red;
+    border-color: red;
 }
