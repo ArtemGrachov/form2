@@ -1,0 +1,177 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial';
+}
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 100px;
+}
+.wrapper:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+.header {
+    background: #19202D;
+    color: white;
+    box-shadow: 0 0 25px 0 #0E121A;
+    margin-bottom: 45px;
+}
+
+.header__title {
+    padding: 20px 0;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.footer {
+    background: #19202D;
+    color: white;
+    height: 100px;
+    margin-top: -100px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.nav {
+    border-top: 2px solid red;
+    
+}
+.nav-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav__link {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+   background:#0E121A;
+   color: red;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+.container:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+.articles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.articles-item {
+    margin: 20px 0;
+}
+
+.articles__title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #19202D;
+    border-bottom: 2px solid red;
+}
+
+.articles__content {
+    text-align: justify;
+    padding: 15px 0;
+}
+
+form {
+    border: 1px solid #AFBACF;
+    padding: 25px 15px;
+    width: 450px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    width: 100%;
+}
+
+input,select {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    margin:10px 0 20px;
+    display: block;
+    border: 1px solid #AFBACF;
+}
+
+select {
+    background: white;
+}
+
+
+input[type="submit"] {
+    background: #19202D;
+    border: none;
+    color: white;
+    border: 1px solid #19202D;
+}
+input[type="submit"]:hover {
+    background: white;
+    color: #19202D;
+}
+
+.dash-sidebar {
+    float: left;
+    width: 20%;
+}
+
+.dash-content {
+    float: left;
+    width: 80%;
+}
+
+.dash-nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dash-nav__link {
+    display: block;
+    padding: 20px;
+    transition: 300ms;
+}
