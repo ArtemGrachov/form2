@@ -21,6 +21,7 @@ angular.module('news')
                             ctrl.nextPage = undefined;
                         }
                     } else {
+                        ctrl.pageNumber = 1;
                         ctrl.nextPage = 2
                         ctrl.prevPage = undefined;
                     }
