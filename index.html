@@ -2,7 +2,7 @@
 <html lang="en" ng-app="app" ng-cloak="">
 
 <head>
-    <title></title>
+    <title>{{pageTitle}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
@@ -10,21 +10,35 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/ngcomponentrouter/angular_1_router.js"></script>
     <script src="node_modules/ngstorage/ngStorage.min.js"></script>
-    <script src="app/dash/dash.module.js"></script>
-    <script src="app/dash/dash.component.js"></script>
-    <script src="app/news/news.module.js"></script>
-    <script src="app/news/news.component.js"></script>
-    <script src="app/login/login.module.js"></script>
-    <script src="app/login/login.component.js"></script>
-    <script src="app/news/post/post.module.js"></script>
-    <script src="app/news/post/post.component.js"></script>
-    <script src="app/reg/reg.module.js"></script>
-    <script src="app/reg/reg.component.js"></script>
+
     <script src="app/app.module.js"></script>
     <script src="app/app.component.js"></script>
+
     <script src="app/services/phone-codes.service.js"></script>
     <script src="app/services/get-posts.service.js"></script>
     <script src="app/services/auth.service.js"></script>
+    <script src="app/services/user-info.service.js"></script>
+    <script src="app/services/page-title.service.js"></script>
+
+    <script src="app/dash/dash.module.js"></script>
+    <script src="app/dash/dash.component.js"></script>
+    <script src="app/dash/profile/profile.module.js"></script>
+    <script src="app/dash/profile/profile.component.js"></script>
+    <script src="app/dash/posts/posts.module.js"></script>
+    <script src="app/dash/posts/posts.component.js"></script>
+
+    <script src="app/news/news.module.js"></script>
+    <script src="app/news/news.component.js"></script>
+
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.component.js"></script>
+
+    <script src="app/news/post/post.module.js"></script>
+    <script src="app/news/post/post.component.js"></script>
+
+    <script src="app/reg/reg.module.js"></script>
+    <script src="app/reg/reg.component.js"></script>
+
 </head>
 
 <body>

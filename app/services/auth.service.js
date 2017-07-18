@@ -1,11 +1,11 @@
 angular.module('app')
     .service('auth', function($window, $localStorage) {
         this.login = function() {
-            $window.location.href = '#!/dash';
+            $window.location.href = '/#!dash';
             $localStorage.auth = true;
         }
         this.logout = function() {
-            $window.location.path = '';
+            $window.location.href = '';
             delete $localStorage.auth;
         }
         this.checkAuth = function() {

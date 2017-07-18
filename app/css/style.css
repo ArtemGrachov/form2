@@ -44,6 +44,10 @@ body {
     margin-bottom: 45px;
 }
 
+.content {
+    padding: 0 10px 60px;
+}
+
 .header__title {
     padding: 20px 0;
     font-size: 48px;
@@ -120,6 +124,21 @@ body {
     float: right;
 }
 
+.news-pagination-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+}
+.news-pagination__item {
+    display: inline-block;
+}
+
+.news-pagination__link {
+    padding: 0 20px;
+}
+
 .articles-list {
     list-style: none;
     padding: 0;
@@ -149,6 +168,39 @@ body {
     text-align: justify;
     padding: 15px 0;
 }
+
+.articles-comments {
+    border: 1px solid lightgrey;
+    padding: 15px;
+}
+
+.articles-comments-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.articles-comments-item {
+    margin: 35px 0;
+}
+
+.articles-comments__info {
+    border-bottom: 1px solid red;
+    margin-bottom: 10px;
+    color: grey;
+    font-size: 14px;
+}
+
+.articles-comments__name {
+    font-weight: bold;
+    margin-bottom: 10px;    
+}
+
+.articles-comments__header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 
 form {
     border: 1px solid #AFBACF;
@@ -183,6 +235,17 @@ select {
     background: white;
 }
 
+table {
+    border: 1px solid grey;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid lightgrey;
+    padding: 10px;
+}
+
 
 .dash-sidebar {
     float: left;
@@ -209,4 +272,11 @@ select {
 .ng-invalid .ng-dirty.ng-invalid {
     color: red;
     border-color: red;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-bottom: 3px solid red;
 }

@@ -1,32 +1,27 @@
 <nav class="news-nav">
+    <ul class="news-pagination-list">
+        <li class="news-pagination__item" ng-repeat="page in $ctrl.pagination">
+            <a class="news-pagination__link" ng-if="page != $ctrl.pageNumber" ng-link="['News', {page: page}]">{{page}}</a>
+            <span class="news-pagination__link" ng-if="page == $ctrl.pageNumber">{{page}}</a>
+        </li>
+    </ul>
     <ul class="news-nav-list">
         <li class="news-nav-item news-nav-item_prev" ng-show="$ctrl.prevPage">
-            <a href="/#!news/{{$ctrl.prevPage}}">
+            <a ng-link="['News', {page: $ctrl.prevPage}]">
                 < Previous page</a>
         </li>
         <li class="news-nav-item news-nav-item_next" ng-show="$ctrl.nextPage">
-            <a href="/#!news/{{$ctrl.nextPage}}">Next page ></a>
+            <a ng-link="['News', {page: $ctrl.nextPage}]">Next page ></a>
         </li>
     </ul>
 </nav>
 <ul class="articles-list">
     <li class="articles-item" ng-repeat="post in $ctrl.posts">
         <div class="articles-title">
-            #{{post.id}} <a class="articles-title__link" href="/#!news/post/{{post.id}}">{{post.title}}</a>
+            #{{post.id}} <a class="articles-title__link" ng-link="['Post', {id:post.id}]">{{post.title}}</a>
         </div>
         <div class="articles__content">
             {{post.body}}
         </div>
     </li>
 </ul>
-<nav class="news-nav">
-    <ul class="news-nav-list">
-        <li class="news-nav-item news-nav-item_prev" ng-show="$ctrl.prevPage">
-            <a href="/#!news/{{$ctrl.prevPage}}">
-                < Previous page</a>
-        </li>
-        <li class="news-nav-item news-nav-item_next" ng-show="$ctrl.nextPage">
-            <a href="/#!news/{{$ctrl.nextPage}}">Next page ></a>
-        </li>
-    </ul>
-</nav>

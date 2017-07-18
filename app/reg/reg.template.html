@@ -43,6 +43,14 @@
     <div class="form-group">
         <label for="phoneNumber">Phone number ({{$ctrl.phoneNumber}})</label>
         <input type="text" name="phoneNumber" ng-model="$ctrl.phoneNumber" ng-keydown="$ctrl.phoneInput($event)" ng-change="$ctrl.phoneChange('{{$ctrl.phoneNumber}}')" value="" phone-number ng-required="true">
+        <div ng-show="regForm.phoneNumber.$dirty">
+            <div class="form-error">
+                <p ng-show="regForm.phoneNumber.$error.length">Phone number is too short</p>
+            </div>
+            <div class="form-success">
+                <p ng-show="regForm.phoneNumber.$valid">Phone number is OK</p>
+            </div>
+        </div>
     </div>
     <input type="submit" name="" ng-disabled="regForm.$invalid" value="Register">
 </form>

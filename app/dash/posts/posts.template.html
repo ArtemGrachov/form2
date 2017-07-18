@@ -1,0 +1,13 @@
+<div class="page-title">Your posts</div>
+<table>
+    <tbody>
+        <tr ng-repeat="post in $ctrl.postsList">
+            <td>
+                {{post.id}}
+            </td>
+            <td>
+                {{post.title}}
+            </td>
+        </tr>
+    </tbody>
+</table>

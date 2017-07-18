@@ -4,3 +4,21 @@
 <div class="articles__content">
     {{$ctrl.post.body}}
 </div>
+<div class="articles-comments">
+    <div class="articles-comments__header">
+        Comments
+    </div>
+    <ul class="articles-comments-list">
+        <li class="articles-comments-item" ng-repeat="comment in $ctrl.comments">
+            <div class="articles-comments__info">
+                # {{comment.id}} {{comment.email}}
+            </div>
+            <div class="articles-comments__name">
+                {{comment.name}}
+            </div>
+            <div class="articles-comments__body">
+                {{comment.body}}
+            </div>
+        </li>
+    </ul>
+</div>

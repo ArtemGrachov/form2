@@ -2,25 +2,14 @@
     <nav class="dash-nav">
         <ul class="dash-nav-list">
             <li class="dash-nav__item">
-                <a class="dash-nav__link" href="#">Profile</a>
+                <a class="dash-nav__link" ng-link="['Profile']">Profile</a>
             </li>
             <li class="dash-nav__item">
-                <a class="dash-nav__link" href="#">Posts</a>
-            </li>
-            <li class="dash-nav__item">
-                <a class="dash-nav__link" href="#">Albums</a>
-            </li>
-            <li class="dash-nav__item">
-                <a class="dash-nav__link" href="#">Bookmarks</a>
+                <a class="dash-nav__link" ng-link="['Posts']">Posts</a>
             </li>
         </ul>
     </nav>
 </div>
 <div class="dash-content">
-    <p>Eu tempor laborum quis in qui Lorem.</p>
-    <p>Do incididunt nulla commodo velit dolore. Elit eu irure reprehenderit officia nisi proident pariatur sit sunt reprehenderit. Aute ad dolore ad ut eu voluptate et duis sit officia. Laboris cupidatat sit Lorem labore aliqua mollit magna labore in et
-        ex. Amet cillum sint commodo eu aute non sunt enim dolore deserunt aliqua ullamco eiusmod.</p>
-    <p>Sunt deserunt anim do sunt nisi.</p>
-    <p>Consequat nulla officia laboris cupidatat. Cupidatat dolore commodo dolore anim sint elit aliquip aliqua qui Lorem esse sunt voluptate. Aute ad magna non consectetur officia nostrud occaecat sit nisi aliqua aliquip voluptate aliquip irure. Labore
-        est esse et amet pariatur cupidatat pariatur veniam laboris quis voluptate. Ex sunt occaecat elit labore reprehenderit Lorem incididunt proident enim occaecat ea quis. Sunt sint elit adipisicing deserunt eu est nostrud.</p>
+    <ng-outlet></ng-outlet>
 </div>

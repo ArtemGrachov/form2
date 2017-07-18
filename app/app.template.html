@@ -5,28 +5,30 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#!" class="nav__link">News</a>
+                        <a ng-link="['News', {page: 1}]" class="nav__link">News</a>
                     </li>
                     <li class="nav-item" ng-show="!$ctrl.checkAuth()">
-                        <a href="#!login" class="nav__link">Sign in</a>
+                        <a ng-link="['Login']" class="nav__link">Sign in</a>
                     </li>
                     <li class="nav-item" ng-show="!$ctrl.checkAuth()">
-                        <a href="#!reg" class="nav__link">Registration</a>
+                        <a ng-link="['Reg']" class="nav__link">Registration</a>
                     </li>
                     <li class="nav-item" ng-show="$ctrl.checkAuth()">
-                        <a href="#!logout" class="nav__link" ng-click="$ctrl.logout()">Sign out</a>
+                        <a href="" class="nav__link" ng-click="$ctrl.logout()">Sign out</a>
                     </li>
                     <li class="nav-item" ng-show="$ctrl.checkAuth()">
-                        <a href="#!dash" class="nav__link">Dashboard</a>
+                        <a ng-link="['Dash']" class="nav__link">Dashboard</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="container">
-        <ng-outlet>
+        <div class="content">
+            <ng-outlet>
 
-        </ng-outlet>
+            </ng-outlet>
+        </div>
     </div>
 </div>
 <footer class="footer">

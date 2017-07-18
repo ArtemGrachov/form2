@@ -1,0 +1,29 @@
+<div class="page-title">Profile: {{$ctrl.user.name}} </div>
+<table>
+    <tbody>
+        <tr>
+            <td>Name:</td>
+            <td>{{$ctrl.user.name}}</td>
+        </tr>
+        <tr>
+            <td>Nickname:</td>
+            <td>{{$ctrl.user.username}}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{$ctrl.user.email}}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{$ctrl.user.address}}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{$ctrl.user.address.city}}, {{$ctrl.user.address.street}}</td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td>{{$ctrl.user.phone}}</td>
+        </tr>
+    </tbody>
+</table>

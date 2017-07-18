@@ -1,7 +1,9 @@
 angular.module('reg')
     .component('reg', {
         templateUrl: 'app/reg/reg.template.html',
-        controller: function(phoneCodes, auth) {
+        controller: function(phoneCodes, pageTitle, auth) {
+            pageTitle.setTitle('Registration');
+
             let ctrl = this;
 
             ctrl.phoneCountry = 'ua';

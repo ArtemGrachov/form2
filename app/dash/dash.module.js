@@ -1,1 +1,1 @@
-angular.module('dash', []);
+angular.module('dash', ['profile', 'posts']);

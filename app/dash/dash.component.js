@@ -1,12 +1,19 @@
 angular.module('dash')
     .component('dash', {
         templateUrl: 'app/dash/dash.template.html',
-        controller: function(auth, $window) {
+        bindings: { $router: '<' },
+        controller: function(auth, pageTitle) {
+            pageTitle.setTitle('Dashboard');
+
             let ctrl = this;
             ctrl.$routerOnActivate = function() {
                 if (!auth.checkAuth()) {
-                    $window.location.path = '#!login';
+                    ctrl.$router.navigate(['Login'])
                 }
             }
-        }
+        },
+        $routeConfig: [
+            { path: '/profile', name: 'Profile', component: 'profile', useAsDefault: true },
+            { path: '/posts', name: 'Posts', component: 'posts' }
+        ]
     })

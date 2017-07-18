@@ -4,6 +4,5 @@ angular.module('app', [
     'dash',
     'login',
     'news',
-    'post',
     'reg'
 ]);
