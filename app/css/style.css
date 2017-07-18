@@ -153,7 +153,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #19202D;
-    border-bottom: 2px solid red;
+    border-left: 2px solid red;
+    padding-left: 20px;
 }
 .articles-title__link {
     text-decoration: none;
@@ -185,7 +186,7 @@ body {
 }
 
 .articles-comments__info {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid grey;
     margin-bottom: 10px;
     color: grey;
     font-size: 14px;

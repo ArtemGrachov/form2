@@ -1,22 +1,24 @@
 angular.module('reg')
     .component('reg', {
         templateUrl: 'app/reg/reg.template.html',
+        bindings: { $router: '<' },
         controller: function(phoneCodes, pageTitle, auth) {
             pageTitle.setTitle('Registration');
-
             let ctrl = this;
 
+            ctrl.$routerOnActivate = function() {
+                if (auth.checkAuth()) {
+                    ctrl.$router.navigate(['Dash'])
+                }
+            }
             ctrl.phoneCountry = 'ua';
-
             ctrl.submitForm = function() {
                 auth.login();
             };
-
             ctrl.selectPhoneCode = function() {
                 ctrl.phoneCode = ctrl.phoneNumber = phoneCodes.getCode(ctrl.phoneCountry);
             }
             ctrl.selectPhoneCode();
-
             ctrl.phoneInput = function(e) {
                 if (ctrl.phoneNumber.length <= 4 && !(/\d/).test(e.key)) {
                     ctrl.phoneNumber = ctrl.phoneCode;
