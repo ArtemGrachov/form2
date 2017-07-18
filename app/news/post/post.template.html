@@ -4,19 +4,30 @@
 <div class="articles__content">
     {{$ctrl.post.body}}
 </div>
-<div class="articles-comments">
-    <div class="articles-comments__header">
+<div class="articles-author">
+    <ul class="articles-author-list">
+        <li class="articles-author__item">
+            Author: {{$ctrl.author.name}}
+        </li>
+        <li class="articles-author__item">
+            Email:
+            <a href="mailto:{{$ctrl.author.email}}">{{$ctrl.author.email}}</a>
+        </li>
+    </ul>
+</div>
+<div class=" articles-comments ">
+    <div class="articles-comments__header ">
         Comments
     </div>
-    <ul class="articles-comments-list">
-        <li class="articles-comments-item" ng-repeat="comment in $ctrl.comments">
-            <div class="articles-comments__info">
+    <ul class="articles-comments-list ">
+        <li class="articles-comments-item " ng-repeat="comment in $ctrl.comments ">
+            <div class="articles-comments__info ">
                 # {{comment.id}} {{comment.email}}
             </div>
-            <div class="articles-comments__name">
+            <div class="articles-comments__name ">
                 {{comment.name}}
             </div>
-            <div class="articles-comments__body">
+            <div class="articles-comments__body ">
                 {{comment.body}}
             </div>
         </li>
