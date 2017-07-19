@@ -4,9 +4,10 @@ angular.module('profile')
         controller: function(userInfo, pageTitle) {
             pageTitle.setTitle('Dashboard: profile');
 
+
             let ctrl = this;
 
-            userInfo.getInfo().then(function(response) {
+            userInfo.getInfo(1).then(function(response) {
                 ctrl.user = response.data;
             })
         }

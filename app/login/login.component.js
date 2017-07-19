@@ -3,7 +3,7 @@ angular.module('login')
         templateUrl: 'app/login/login.template.html',
         bindings: { $router: '<' },
 
-        controller: function(auth, pageTitle) {
+        controller: function(auth, pageTitle, $facebook) {
             pageTitle.setTitle('Sign in');
             let ctrl = this;
 
@@ -12,9 +12,10 @@ angular.module('login')
                     ctrl.$router.navigate(['Dash'])
                 }
             }
-            ctrl.submitForm = function() {
-                auth.login();
-            };
+            ctrl.submitForm = auth.login;
+            ctrl.fbLogin = function() {
+                auth.fbLogin();
+            }
         },
         $routerConfig: [
             { path: '/', name: 'TestPage', component: 'testPage' }

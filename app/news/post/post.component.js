@@ -1,9 +1,13 @@
 angular.module('post')
     .component('post', {
         templateUrl: 'app/news/post/post.template.html',
-        controller: function(getPosts, pageTitle, userInfo) {
+        controller: function(getPosts, pageTitle, userInfo, $facebook) {
             let ctrl = this;
-
+            ctrl.fbShare = function() {
+                $facebook.ui({
+                    method: 'share'
+                })
+            }
             ctrl.$routerOnActivate = function(next) {
                 ctrl.postId = next.params.id;
                 getPosts.getSingle(ctrl.postId)

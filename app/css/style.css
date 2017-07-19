@@ -214,6 +214,10 @@ body {
     list-style: none;
 }
 
+.button-inline {
+    display: inline-block;
+    width: auto;
+}
 
 form {
     border: 1px solid #AFBACF;
