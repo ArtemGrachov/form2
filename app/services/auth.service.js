@@ -5,7 +5,6 @@ angular.module('app')
             $localStorage.auth = true;
         }
         this.logout = function() {
-            delete $localStorage.auth;
             $facebook.getLoginStatus()
                 .then(
                     function(response) {
@@ -14,6 +13,7 @@ angular.module('app')
                         }
                     }
                 )
+            delete $localStorage.auth;
         }
         this.checkAuth = function() {
             if ($localStorage.auth) return true;
@@ -21,7 +21,7 @@ angular.module('app')
         this.fbLogin = function() {
             $facebook.login().then(
                 function() {
-                    // $window.location.href = "";
+                    $window.location.href = "";
                     $localStorage.auth = true;
                 }
             )

@@ -9,6 +9,9 @@ angular.module('app', [
     ])
     .config(function($facebookProvider) {
         $facebookProvider.setAppId(475721832781947);
+        $facebookProvider.setCustomInit({
+            cookie: true
+        })
     })
     .run(function($rootScope) {
         (function() {
