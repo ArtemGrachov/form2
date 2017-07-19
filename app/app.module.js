@@ -5,7 +5,8 @@ angular.module('app', [
         'dash',
         'login',
         'news',
-        'reg'
+        'reg',
+        'uiGmapgoogle-maps'
     ])
     .config(function($facebookProvider) {
         $facebookProvider.setAppId(475721832781947);

@@ -25,5 +25,9 @@ angular.module('post')
                     })
 
             }
+            ctrl.map = {
+                center: { latitude: 45, longitude: -73 },
+                zoom: 8
+            }
         }
     })

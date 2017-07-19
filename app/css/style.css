@@ -297,3 +297,5 @@ td {
     margin-bottom: 30px;
     border-bottom: 3px solid red;
 }
+
+.angular-google-map-container { height: 400px; }
