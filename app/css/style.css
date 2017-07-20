@@ -308,3 +308,17 @@ td {
     border-radius: 5px;
 
 }
+
+.upload-img__img {
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px dashed lightgrey;
+    padding: 2px;
+    margin: 5px;
+}
+
+.upload-img-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

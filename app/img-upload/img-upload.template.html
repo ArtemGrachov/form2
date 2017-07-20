@@ -1,0 +1,28 @@
+<h1>Upload image</h1>
+<p>Select image category:</p>
+<select ng-model="$ctrl.imageCat">
+    <option value="Nature">Nature</option>
+    <option value="Space">Space</option>
+    <option value="People">People</option>
+    <option value="Animals">Animals</option>
+    <option value="City">City</option>
+    <option value="Art">Art</option>
+    <option value="Other">Other</option>
+</select>
+<input type="button" ngf-select="$ctrl.uploadFiles($files)" multiple class="button-inline" name="" value="Upload image">
+<div>
+    <p class="form-success" ng-show="$ctrl.loadSuccess">
+        All images uploaded successfull
+    </p>
+    <p class="form-error" ng-show="$ctrl.loadError">
+        There are some errors with upload
+    </p>
+</div>
+<ul class="upload-img-list">
+    <li ng-repeat="img in $ctrl.images" class="upload-img-item">
+        <a href="{{img.url}}" target="_blank">
+            <cl-image public-id="{{img.public_id}}" format="jpg"></cl-image>
+        </a>
+        <input type="text" value="{{img.url}}" disabled>
+    </li>
+</ul>

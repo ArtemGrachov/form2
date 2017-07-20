@@ -22,6 +22,3 @@ angular.module('login')
 
         ]
     })
-    .component('testPage', {
-        template: '<h1>testPage</h1>'
-    })

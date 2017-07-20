@@ -9,6 +9,7 @@ angular.module('app')
             { path: '/login/', component: 'login', name: 'Login' },
             { path: '/dash/...', component: 'dash', name: 'Dash' },
             { path: '/news/post/:id/', component: 'post', name: 'Post' },
+            { path: '/img-upload/', component: 'imgUpload', name: 'ImgUpload' }
 
         ],
         controller: function(auth) {
