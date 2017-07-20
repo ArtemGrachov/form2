@@ -57,57 +57,50 @@ angular.module('post')
             ctrl.markerTemplate = {
                 events: {
                     mouseover: function(m, event, scope) {
-                        scope.control.options.label.color = 'darkblue'
-
+                        scope.control.options.labelVisible = true
                     },
                     mouseout: function(m, event, scope) {
-                        scope.control.options.label.color = 'transparent'
+                        scope.control.options.labelVisible = false
                     }
                 }
             }
             ctrl.customMarkers = [{
-                    __proto__: ctrl.markerTemplate,
                     position: {
                         latitude: 48.675,
                         longitude: 26.605,
                     },
                     options: {
-                        label: {
-                            text: 'label #1',
-                            color: 'transparent'
-                        },
+                        labelContent: '#1 Label',
+                        labelVisible: false,
+                        labelClass: 'test-marker-label',
                         icon: {
                             url: 'app/img/envelope2.svg'
                         }
                     }
                 },
                 {
-                    __proto__: ctrl.markerTemplate,
                     position: {
                         latitude: 48.705,
                         longitude: 26.505,
                     },
                     options: {
-                        label: {
-                            text: 'label #2',
-                            color: 'transparent'
-                        },
+                        labelContent: '#2 Label',
+                        labelVisible: false,
+                        labelClass: 'test-marker-label',
                         icon: {
                             url: 'app/img/envelope2.svg'
                         }
                     }
                 },
                 {
-                    __proto__: ctrl.markerTemplate,
                     position: {
                         latitude: 48.725,
                         longitude: 26.603,
                     },
                     options: {
-                        label: {
-                            text: 'label #3',
-                            color: 'transparent'
-                        },
+                        labelContent: '#3 Label',
+                        labelVisible: false,
+                        labelClass: 'test-marker-label',
                         icon: {
                             url: 'app/img/envelope2.svg'
                         }

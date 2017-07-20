@@ -299,3 +299,12 @@ td {
 }
 
 .angular-google-map-container { height: 400px; }
+
+.test-marker-label {
+    font-size: 14px;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
