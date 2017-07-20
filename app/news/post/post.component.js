@@ -9,22 +9,23 @@ angular.module('post')
                 })
             }
             ctrl.$routerOnActivate = function(next) {
-                ctrl.postId = next.params.id;
-                getPosts.getSingle(ctrl.postId)
-                    .then(function(response) {
-                        ctrl.post = response.data;
-                        pageTitle.setTitle(ctrl.post.title);
-                        userInfo.getInfo(ctrl.post.userId)
-                            .then(function(response) {
-                                ctrl.author = response.data;
-                            })
-                    })
-                getPosts.getComments(ctrl.postId)
-                    .then(function(response) {
-                        ctrl.comments = response.data;
-                    })
+                    ctrl.postId = next.params.id;
+                    getPosts.getSingle(ctrl.postId)
+                        .then(function(response) {
+                            ctrl.post = response.data;
+                            pageTitle.setTitle(ctrl.post.title);
+                            userInfo.getInfo(ctrl.post.userId)
+                                .then(function(response) {
+                                    ctrl.author = response.data;
+                                })
+                        })
+                    getPosts.getComments(ctrl.postId)
+                        .then(function(response) {
+                            ctrl.comments = response.data;
+                        })
 
-            }
+                }
+                //////////////////////////////// NG GOOGLE MAP TEST ////////////////////////////////
             ctrl.testMap = {
                 center: {
                     latitude: 48.698198,
@@ -44,16 +45,75 @@ angular.module('post')
                     opacity: .1
                 },
                 events: {
-                    click: function(e, event, scope) {
-                        console.log(arguments);
+                    click: function(m, event, scope) {
                         let testWindow = new google.maps.InfoWindow({
                             content: `Test value is: <b>${scope.control.testVal}</b>`,
                             position: { lat: this.center.latitude, lng: this.center.longitude },
-                            map: e.map
+                            map: m.map
                         })
                     }
                 }
             }
+            ctrl.markerTemplate = {
+                events: {
+                    mouseover: function(m, event, scope) {
+                        scope.control.options.label.color = 'darkblue'
+
+                    },
+                    mouseout: function(m, event, scope) {
+                        scope.control.options.label.color = 'transparent'
+                    }
+                }
+            }
+            ctrl.customMarkers = [{
+                    __proto__: ctrl.markerTemplate,
+                    position: {
+                        latitude: 48.675,
+                        longitude: 26.605,
+                    },
+                    options: {
+                        label: {
+                            text: 'label #1',
+                            color: 'transparent'
+                        },
+                        icon: {
+                            url: 'app/img/envelope2.svg'
+                        }
+                    }
+                },
+                {
+                    __proto__: ctrl.markerTemplate,
+                    position: {
+                        latitude: 48.705,
+                        longitude: 26.505,
+                    },
+                    options: {
+                        label: {
+                            text: 'label #2',
+                            color: 'transparent'
+                        },
+                        icon: {
+                            url: 'app/img/envelope2.svg'
+                        }
+                    }
+                },
+                {
+                    __proto__: ctrl.markerTemplate,
+                    position: {
+                        latitude: 48.725,
+                        longitude: 26.603,
+                    },
+                    options: {
+                        label: {
+                            text: 'label #3',
+                            color: 'transparent'
+                        },
+                        icon: {
+                            url: 'app/img/envelope2.svg'
+                        }
+                    }
+                }
+            ]
             ctrl.testCircles = [{
                     center: {
                         latitude: 48.708198,
