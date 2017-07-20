@@ -4,6 +4,10 @@
 <div class="articles__content">
     {{$ctrl.post.body}}
 </div>
+<ui-gmap-google-map center="$ctrl.testMap.center" zoom="$ctrl.testMap.zoom" control="$ctrl.mapCtrl">
+    <ui-gmap-circle ng-repeat="circle in $ctrl.testCircles" center="circle.center" control="circle" radius="$ctrl.circleTemplate.radius" stroke="$ctrl.circleTemplate.stroke" fill="$ctrl.circleTemplate.fill" events="$ctrl.circleTemplate.events">
+</ui-gmap-google-map>
+{{$ctrl.testVal}}
 <div>
     <input type="button" ng-click="$ctrl.fbShare()" class="button-inline" name="" value="Share with Facebook">
 </div>
@@ -36,4 +40,3 @@
         </li>
     </ul>
 </div>
-<ui-gmap-google-map center='$ctrl.map.center' zoom='$ctrl.map.zoom'></ui-gmap-google-map>
