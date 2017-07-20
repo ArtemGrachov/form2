@@ -9,7 +9,11 @@
     <option value="Art">Art</option>
     <option value="Other">Other</option>
 </select>
-<input type="button" ngf-select="$ctrl.uploadFiles($files)" multiple class="button-inline" name="" value="Upload image">
+<!-- <input type="button" ngf-select="$ctrl.uploadFiles($files)" multiple class="button-inline" name="" value="Upload image"> -->
+<input type="button" ngf-select="$ctrl.selectFile($files)" name="" value="Select files">
+<div class="crop-area">
+    <img-crop image="$ctrl.uploadImg"></img-crop>
+</div>
 <div>
     <p class="form-success" ng-show="$ctrl.loadSuccess">
         All images uploaded successfull

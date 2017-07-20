@@ -9,7 +9,8 @@ angular.module('app', [
         'login',
         'news',
         'reg',
-        'imgUpload'
+        'imgUpload',
+        'ngImgCrop'
     ])
     .config(function($facebookProvider) {
         $facebookProvider.setAppId(475721832781947);

@@ -4,8 +4,16 @@ angular.module('imgUpload')
         controller: function(pageTitle, Upload) {
             pageTitle.setTitle('Upload Image');
             let ctrl = this;
-            ctrl.filesToUpload = [];
-            ctrl.imageCat = 'Other'
+            ctrl.imageCat = 'Other';
+
+            ctrl.selectFile = function(files) {
+                let fileReader = new FileReader();
+                fileReader.addEventListener('load', function(e) {
+                    ctrl.uploadImg = e.target.result;
+                    console.log(e.target.result);
+                })
+                fileReader.readAsDataURL(files[0]);
+            }
 
             ctrl.uploadFiles = function(files) {
                 ctrl.images = [];
