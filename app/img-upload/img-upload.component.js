@@ -5,46 +5,48 @@ angular.module('imgUpload')
             pageTitle.setTitle('Upload Image');
             let ctrl = this;
             ctrl.imageCat = 'Other';
+            ctrl.cropImage = '';
+
 
             ctrl.selectFile = function(files) {
-                let fileReader = new FileReader();
-                fileReader.addEventListener('load', function(e) {
-                    ctrl.uploadImg = e.target.result;
-                    console.log(e.target.result);
-                })
-                fileReader.readAsDataURL(files[0]);
+                if (files[0]) {
+                    let fileReader = new FileReader();
+                    fileReader.addEventListener('load', function(e) {
+                        ctrl.uploadImg = e.target.result;
+                    })
+                    fileReader.readAsDataURL(files[0]);
+                }
             }
 
-            ctrl.uploadFiles = function(files) {
-                ctrl.images = [];
+            ctrl.uploadFiles = function(base64) {
+                let file = Upload.dataUrltoBlob(base64);
+                file = new File([file], 'image.jpg', { type: 'imahe/jpg' })
+
                 ctrl.loadSuccess = false;
                 ctrl.loadError = false;
+                file.upload = Upload.upload({
+                        url: 'https://api.cloudinary.com/v1_1/dizwxgmuv/upload',
+                        data: {
+                            upload_preset: 'wdmbaydv',
+                            file: file,
+                            folder: ctrl.imageCat
+                        }
+                    })
+                    .progress(function(e) {
+                        ctrl.loading = true;
+                        // console.log(e);
+                    })
+                    .success(function(e) {
+                        ctrl.loading = false;
+                        ctrl.loadSuccess = true;
+                        // console.log(e);
+                    })
+                    .error(function(e) {
+                        ctrl.loading = false;
+                        ctrl.loadError = true;
+                        // console.log(e);
+                    })
 
-                for (let i = 0; i < files.length; i++) {
-                    let file = files[i];
-
-                    file.upload = Upload.upload({
-                            url: 'https://api.cloudinary.com/v1_1/dizwxgmuv/upload',
-                            data: {
-                                upload_preset: 'wdmbaydv',
-                                file: file,
-                                folder: ctrl.imageCat
-                            }
-                        })
-                        .progress(function(e) {
-                            // console.log(e);
-                        })
-                        .success(function(e) {
-                            ctrl.loadSuccess = true;
-                            ctrl.images.push(e);
-                            // console.log(e);
-                        })
-                        .error(function(e) {
-                            ctrl.loadError = false;
-                            // console.log(e);
-                        })
-
-                }
             }
         }
     })

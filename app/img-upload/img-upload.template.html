@@ -1,6 +1,9 @@
 <h1>Upload image</h1>
-<p>Select image category:</p>
-<select ng-model="$ctrl.imageCat">
+
+<input type="button" ngf-select="$ctrl.selectFile($files)" name="" value="Select files">
+<div ng-show="$ctrl.uploadImg">
+    <p>Select image category:</p>
+    <select ng-model="$ctrl.imageCat">
     <option value="Nature">Nature</option>
     <option value="Space">Space</option>
     <option value="People">People</option>
@@ -9,14 +12,21 @@
     <option value="Art">Art</option>
     <option value="Other">Other</option>
 </select>
-<!-- <input type="button" ngf-select="$ctrl.uploadFiles($files)" multiple class="button-inline" name="" value="Upload image"> -->
-<input type="button" ngf-select="$ctrl.selectFile($files)" name="" value="Select files">
-<div class="crop-area">
-    <img-crop image="$ctrl.uploadImg"></img-crop>
+    <p>Crop image:</p>
+    <div class="crop-area">
+        <img-crop image="$ctrl.uploadImg" result-image="$ctrl.cropImage" area-type="square"></img-crop>
+    </div>
+    <input type="button" ng-click="$ctrl.uploadFiles($ctrl.cropImage)" name="" value="Upload">
+    <!-- <input type="button" ngf-select="$ctrl.uploadFiles($files)" multiple class="button-inline" name="" value="Upload image"> -->
+    <!-- <img ng-src="{{$ctrl.cropImage}}" /> -->
 </div>
+
 <div>
+    <p ng-show="$ctrl.loading">
+        Wait a moment...
+    </p>
     <p class="form-success" ng-show="$ctrl.loadSuccess">
-        All images uploaded successfull
+        Image uploaded successfully
     </p>
     <p class="form-error" ng-show="$ctrl.loadError">
         There are some errors with upload
