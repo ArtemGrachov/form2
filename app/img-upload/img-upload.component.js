@@ -6,9 +6,10 @@ angular.module('imgUpload')
             let ctrl = this;
             ctrl.imageCat = 'Other';
             ctrl.cropImage = '';
-
+            ctrl.imageSize = '256';
 
             ctrl.selectFile = function(files) {
+                console.log(files);
                 if (files[0]) {
                     let fileReader = new FileReader();
                     fileReader.addEventListener('load', function(e) {
@@ -34,17 +35,14 @@ angular.module('imgUpload')
                     })
                     .progress(function(e) {
                         ctrl.loading = true;
-                        // console.log(e);
                     })
                     .success(function(e) {
                         ctrl.loading = false;
                         ctrl.loadSuccess = true;
-                        // console.log(e);
                     })
                     .error(function(e) {
                         ctrl.loading = false;
                         ctrl.loadError = true;
-                        // console.log(e);
                     })
 
             }

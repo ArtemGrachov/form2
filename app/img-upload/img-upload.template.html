@@ -4,21 +4,30 @@
 <div ng-show="$ctrl.uploadImg">
     <p>Select image category:</p>
     <select ng-model="$ctrl.imageCat">
-    <option value="Nature">Nature</option>
-    <option value="Space">Space</option>
-    <option value="People">People</option>
-    <option value="Animals">Animals</option>
-    <option value="City">City</option>
-    <option value="Art">Art</option>
-    <option value="Other">Other</option>
-</select>
+        <option value="Nature">Nature</option>
+        <option value="Space">Space</option>
+        <option value="People">People</option>
+        <option value="Animals">Animals</option>
+        <option value="City">City</option>
+        <option value="Art">Art</option>
+        <option value="Other">Other</option>
+    </select>
+    <p>Output size:</p>
+    <select ng-model="$ctrl.imageSize">
+        <option value="1024">1024px</option>
+        <option value="512">512px</option>
+        <option value="256">256px</option>
+        <option value="128">128px</option>
+        <option value="64">64px</option>
+        <option value="32">32px</option>
+    </select>
     <p>Crop image:</p>
     <div class="crop-area">
-        <img-crop image="$ctrl.uploadImg" result-image="$ctrl.cropImage" area-type="square"></img-crop>
+        <img-crop image="$ctrl.uploadImg" result-image="$ctrl.cropImage" result-image-size="$ctrl.imageSize" area-type="square"></img-crop>
     </div>
+    <p>Output image:</p>
+    <img ng-src="{{$ctrl.cropImage}}">
     <input type="button" ng-click="$ctrl.uploadFiles($ctrl.cropImage)" name="" value="Upload">
-    <!-- <input type="button" ngf-select="$ctrl.uploadFiles($files)" multiple class="button-inline" name="" value="Upload image"> -->
-    <!-- <img ng-src="{{$ctrl.cropImage}}" /> -->
 </div>
 
 <div>
