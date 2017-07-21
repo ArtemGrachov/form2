@@ -17,5 +17,10 @@
     "ng-img-crop": "^0.2.0",
     "ngcomponentrouter": "^2.1.0",
     "ngstorage": "^0.3.11"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.30"
   }
 }

@@ -18,7 +18,7 @@
 <ul class="articles-list">
     <li class="articles-item" ng-repeat="post in $ctrl.posts">
         <div class="articles-title">
-            #{{post.id}} <a class="articles-title__link" ng-link="['Post', {id:post.id}]">{{post.title}}</a>
+            <a class="articles-title__link" ng-link="['Post', {id:post._id}]">#{{post._id}} {{post.title}}</a>
         </div>
         <div class="articles__content">
             {{post.body}}

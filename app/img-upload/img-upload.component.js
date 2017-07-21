@@ -9,7 +9,6 @@ angular.module('imgUpload')
             ctrl.imageSize = '256';
 
             ctrl.selectFile = function(files) {
-                console.log(files);
                 if (files[0]) {
                     let fileReader = new FileReader();
                     fileReader.addEventListener('load', function(e) {
