@@ -7,17 +7,15 @@ angular.module('login')
             pageTitle.setTitle('Sign in');
             let ctrl = this;
 
-            ctrl.$postLink = function() {
+            ctrl.$routerOnActivate = function() {
                 if (auth.checkAuth()) {
                     ctrl.$router.navigate(['Dash'])
                 }
             }
+
             ctrl.submitForm = auth.login;
             ctrl.fbLogin = function() {
                 auth.fbLogin();
             }
-        },
-        $routerConfig: [
-            { path: '/', name: 'TestPage', component: 'testPage' }
-        ]
+        }
     })

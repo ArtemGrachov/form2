@@ -13,11 +13,13 @@ angular.module('app')
             { path: '/new-post/', component: 'newPost', name: 'NewPost' }
 
         ],
-        controller: function(auth, $rootScope, $facebook, $localStorage) {
-            this.logout = auth.logout;
-            this.login = auth.login;
-            this.checkAuth = auth.checkAuth;
-            this.$postLink = function() {
+        controller: function(auth, $rootScope, $facebook, $localStorage, $window) {
+            let ctrl = this;
+
+            ctrl.logout = auth.logout;
+            ctrl.login = auth.login;
+            ctrl.checkAuth = auth.checkAuth;
+            ctrl.$postLink = function() {
                 $rootScope.$on('fb.auth.logout', function() {
                     delete $localStorage.auth;
                 })

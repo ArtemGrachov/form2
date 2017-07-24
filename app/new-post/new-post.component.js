@@ -3,9 +3,15 @@ angular.module('newPost')
         templateUrl: 'app/new-post/new-post.template.html',
         bindings: { $router: '<' },
 
-        controller: function(sendPosts, pageTitle) {
+        controller: function(auth, sendPosts, pageTitle) {
             let ctrl = this;
             pageTitle.setTitle('New Post');
+
+            ctrl.$routerOnActivate = function() {
+                if (!auth.checkAuth()) {
+                    ctrl.$router.navigate(['Login'])
+                };
+            }
 
             ctrl.newPost = function() {
                 ctrl.loadError = ctrl.loadSuccess = false;

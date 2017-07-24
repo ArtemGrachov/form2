@@ -2,11 +2,9 @@ angular.module('dash')
     .component('dash', {
         templateUrl: 'app/dash/dash.template.html',
         bindings: { $router: '<' },
-        controller: function(auth, pageTitle, $facebook, $window) {
+        controller: function(auth, pageTitle, $facebook) {
             pageTitle.setTitle('Dashboard');
-
             let ctrl = this;
-
             ctrl.$routerOnActivate = function() {
                 if (!auth.checkAuth()) {
                     ctrl.$router.navigate(['Login'])

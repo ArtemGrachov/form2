@@ -4,7 +4,8 @@ let express = require('express'),
     MongoClient = require('mongodb').MongoClient,
     ObjectID = require('mongodb').ObjectID,
     db = require('./db'),
-    postsController = require('./controllers/posts');
+    postsController = require('./controllers/posts'),
+    usersController = require('./controllers/users');
 
 app.use(bodyParser.json());
 
@@ -25,6 +26,12 @@ app.post('/posts', postsController.create);
 app.put('/posts/:id', postsController.update);
 app.delete('/posts/:id', postsController.delete);
 app.delete('/posts', postsController.clear);
+
+app.get('/users', usersController.allUsers);
+app.get('/users/:username', usersController.getUser);
+app.post('/users', usersController.newUser);
+
+
 
 db.connect('mongodb://localhost:27017/formapi', function(err) {
     if (err) {

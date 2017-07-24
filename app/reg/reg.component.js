@@ -6,14 +6,27 @@ angular.module('reg')
             pageTitle.setTitle('Registration');
             let ctrl = this;
 
-            ctrl.$routerOnActivate = function() {
+            ctrl.$postLink = function() {
                 if (auth.checkAuth()) {
                     ctrl.$router.navigate(['Dash'])
                 }
             }
+
             ctrl.phoneCountry = 'ua';
             ctrl.submitForm = function() {
-                auth.login();
+                auth.reg({
+                    username: ctrl.login,
+                    password: ctrl.password,
+                    phone: ctrl.phoneNumber
+                }).then(
+                    function(response) {
+                        if (response.status == 200) {
+                            auth.login();
+                        } else {
+                            ctrl.regError = true;
+                        }
+                    }
+                )
             };
             ctrl.selectPhoneCode = function() {
                 ctrl.phoneCode = ctrl.phoneNumber = phoneCodes.getCode(ctrl.phoneCountry);

@@ -1,9 +1,16 @@
 angular.module('imgUpload')
     .component('imgUpload', {
         templateUrl: 'app/img-upload/img-upload.template.html',
-        controller: function(pageTitle, Upload) {
-            pageTitle.setTitle('Upload Image');
+        bindings: { $router: '<' },
+        controller: function(pageTitle, auth, Upload) {
             let ctrl = this;
+            pageTitle.setTitle('Upload Image');
+            ctrl.$routerOnActivate = function() {
+                if (!auth.checkAuth()) {
+                    ctrl.$router.navigate(['Login'])
+                }
+            }
+
             ctrl.imageCat = 'Other';
             ctrl.cropImage = '';
             ctrl.imageSize = '256';

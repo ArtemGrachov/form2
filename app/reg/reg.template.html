@@ -53,4 +53,7 @@
         </div>
     </div>
     <input type="submit" name="" ng-disabled="regForm.$invalid" value="Register">
+    <div class="form-error" ng-show="$ctrl.regError">
+        <p>There are some issues with registration</p>
+    </div>
 </form>
