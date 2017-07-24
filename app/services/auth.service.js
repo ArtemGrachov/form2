@@ -20,9 +20,12 @@ angular.module('app')
         }
         this.fbLogin = function() {
             $facebook.login().then(
-                function() {
-                    $window.location.href = "";
-                    $localStorage.auth = true;
+                function(response) {
+                    console.log(arguments)
+                    if (response.status == 'connected') {
+                        $window.location.href = "";
+                        $localStorage.auth = true;
+                    }
                 }
             )
         }

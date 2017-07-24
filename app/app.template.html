@@ -5,7 +5,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a ng-link="['News', {page: 1}]" class="nav__link">News</a>
+                        <a ng-link="['/', {page: 1}]" class="nav__link">News</a>
                     </li>
                     <li class="nav-item" ng-show="!$ctrl.checkAuth()">
                         <a ng-link="['Login']" class="nav__link">Sign in</a>
@@ -19,8 +19,11 @@
                     <li class="nav-item" ng-show="$ctrl.checkAuth()">
                         <a ng-link="['Dash']" class="nav__link">Dashboard</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" ng-show="$ctrl.checkAuth()">
                         <a ng-link="['ImgUpload']" class="nav__link">Image Upload</a>
+                    </li>
+                    <li class="nav-item" ng-show="$ctrl.checkAuth()">
+                        <a ng-link="['NewPost']" class="nav__link">Write Post</a>
                     </li>
                 </ul>
             </nav>

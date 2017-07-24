@@ -9,12 +9,18 @@ angular.module('app')
             { path: '/login/', component: 'login', name: 'Login' },
             { path: '/dash/...', component: 'dash', name: 'Dash' },
             { path: '/news/post/:id/', component: 'post', name: 'Post' },
-            { path: '/img-upload/', component: 'imgUpload', name: 'ImgUpload' }
+            { path: '/img-upload/', component: 'imgUpload', name: 'ImgUpload' },
+            { path: '/new-post/', component: 'newPost', name: 'NewPost' }
 
         ],
-        controller: function(auth) {
+        controller: function(auth, $rootScope, $facebook, $localStorage) {
             this.logout = auth.logout;
             this.login = auth.login;
             this.checkAuth = auth.checkAuth;
+            this.$postLink = function() {
+                $rootScope.$on('fb.auth.logout', function() {
+                    delete $localStorage.auth;
+                })
+            }
         }
     })

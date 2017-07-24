@@ -6,8 +6,6 @@ exports.all = function(req, res) {
             console.log(err);
             return res.sendStatus(500);
         };
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.send(docs);
     });
 };
@@ -18,8 +16,6 @@ exports.findById = function(req, res) {
             console.log(err);
             return res.sendStatus(500);
         };
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.send(doc);
     });
 };
@@ -35,8 +31,6 @@ exports.create = function(req, res) {
             console.log(err);
             return res.sendStatus(500);
         };
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.send(post);
     });
 };
@@ -52,8 +46,6 @@ exports.update = function(req, res) {
                 console.log(err);
                 return res.sendStatus(500);
             };
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.sendStatus(200);
         }
     );
@@ -65,8 +57,6 @@ exports.delete = function(req, res) {
             console.log(err);
             return res.sendStatus(500);
         };
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.sendStatus(200);
     });
 };
@@ -77,8 +67,6 @@ exports.clear = function(req, res) {
             console.log(err);
             return res.sendStatus(500);
         };
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.sendStatus(200);
     })
 }

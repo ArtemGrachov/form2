@@ -1,0 +1,16 @@
+<h1>New post</h1>
+<form name="postForm">
+    <label for="postTitle">Post title:</label>
+    <input type="text" name="postTitle" value="" value="" ng-model="$ctrl.postTitle" ng-required="true">
+    <label for="postTitle">Post text:</label>
+    <textarea rows="25" cols="" name="postBody" value="" ng-model="$ctrl.postBody" ng-required="true"></textarea>
+    <input type="submit" ng-click="$ctrl.newPost();" ng-disabled="postForm.$invalid" value="Send post">
+    <div>
+        <p class="form-success" ng-show="$ctrl.loadSuccess">
+            Post loaded successfully
+        </p>
+        <p class="form-error" ng-show="$ctrl.loadError">
+            There are some errors with upload
+        </p>
+    </div>
+</form>

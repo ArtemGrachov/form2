@@ -7,7 +7,7 @@ angular.module('login')
             pageTitle.setTitle('Sign in');
             let ctrl = this;
 
-            ctrl.$routerOnActivate = function() {
+            ctrl.$postLink = function() {
                 if (auth.checkAuth()) {
                     ctrl.$router.navigate(['Dash'])
                 }
@@ -19,6 +19,5 @@ angular.module('login')
         },
         $routerConfig: [
             { path: '/', name: 'TestPage', component: 'testPage' }
-
         ]
     })

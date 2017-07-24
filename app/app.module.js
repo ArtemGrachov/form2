@@ -9,6 +9,7 @@ angular.module('app', [
         'login',
         'news',
         'reg',
+        'newPost',
         'imgUpload',
         'ngImgCrop'
     ])
